@@ -16,20 +16,20 @@ class MovieRegistryImplTest extends Specification {
 
     void "injection should work"() {
         expect:
-            registry != null
+        registry != null
     }
 
     void "favorites should be empty"() {
         expect:
-            registry.listFavorites() == []
+        registry.listFavorites() == []
     }
 
     void "adding a favorite should fill in the database"() {
         when:
-            registry.addMovieToFavorites("aaaaa")
+        registry.addMovieToFavorites("aaaaa")
         then:
-            registry.listFavorites().size() == 1
-            registry.listFavorites().find { it.title == 'my movie'}
+        registry.listFavorites().size() == 1
+        registry.listFavorites().find { it.title == 'my movie'}
     }
 
 
